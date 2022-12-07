@@ -8,13 +8,19 @@ environment:
   flutter: 3.3.8
 
 dependencies:
+  audio_video_progress_bar: ^0.11.0
   bloc: ^8.1.0
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
+  flutter_sound: ^9.2.13
   intl: ^0.17.0
+  just_audio: ^0.9.30
+  rxdart: ^0.27.7
+  youtube_explode_dart: ^1.12.3
 
 dev_dependencies:
   bloc_test: ^9.1.0

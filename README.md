@@ -25,7 +25,7 @@ Insert gif or link to demo
 - Realtime YouTube audio
 - Cross platform
 - Dynamic theme
-- Internationalization 
+- Internationalization
 
 ## Authors
 
