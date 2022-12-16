@@ -1,4 +1,4 @@
-package com.bigdeal.org.leeplay
+package com.bigdeal.leeplay
 
 import io.flutter.embedding.android.FlutterActivity
 

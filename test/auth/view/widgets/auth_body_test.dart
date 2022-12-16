@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:leeplay/player/player.dart';
+import 'package:leeplay/auth/auth.dart';
 
 void main() {
-  group('PlayerBody', () {
+  group('AuthBody', () {
     testWidgets('renders Text', (tester) async { 
       await tester.pumpWidget(
         BlocProvider(
-          create: (context) => PlayerBloc(),
-          child: MaterialApp(home: PlayerBody()),
+          create: (context) => AuthBloc(),
+          child: MaterialApp(home: AuthBody()),
         ),
       );
 

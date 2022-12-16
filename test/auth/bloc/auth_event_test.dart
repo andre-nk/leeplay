@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:leeplay/player/bloc/bloc.dart';
+import 'package:leeplay/auth/bloc/bloc.dart';
 
 void main() {
-  group('PlayerEvent', () {  
-    group('CustomPlayerEvent', () {
+  group('AuthEvent', () {  
+    group('CustomAuthEvent', () {
       test('supports value equality', () {
         expect(
-          const InitPlayerEvent(),
+          const AuthLogin(),
           isNotNull,
         );
       });
@@ -16,8 +16,8 @@ void main() {
     group('constructor', () {
       test('can be instantiated', () {
         expect(
-          InitPlayerEvent(),
-          equals(const InitPlayerEvent()),
+          AuthLogin(),
+          equals(const AuthLogin()),
         );
       });
     });

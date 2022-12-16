@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:leeplay/auth/auth.dart';
 import 'package:leeplay/l10n/l10n.dart';
-import 'package:leeplay/player/player.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const PlayerPage(),
+      home: const AuthPage(),
     );
   }
 }

@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:leeplay/player/bloc/bloc.dart';
+import 'package:leeplay/auth/bloc/bloc.dart';
 
 void main() {
-  group('PlayerState', () {
+  group('AuthState', () {
     test('supports value equality', () {
       expect(
-        PlayerState(),
+        AuthState(),
         equals(
-          const PlayerState(),
+          const AuthState(),
         ),
       );
     });
@@ -17,7 +17,7 @@ void main() {
     group('constructor', () {
       test('can be instantiated', () {
         expect(
-          const PlayerState(),
+          const AuthState(),
           isNotNull,
         );
       });
@@ -28,10 +28,10 @@ void main() {
         'copies correctly '
         'when no argument specified',
         () {
-          const playerState = PlayerState();
+          const authState = AuthState();
           expect(
-            playerState.copyWith(),
-            equals(playerState),
+            authState.copyWith(),
+            equals(authState),
           );
         },
       );
@@ -40,13 +40,13 @@ void main() {
         'copies correctly '
         'when all arguments specified',
         () {
-          const playerState = PlayerState();
-          final otherPlayerState = PlayerState();
-          expect(playerState, isNot(equals(otherPlayerState)));
+          const authState = AuthState();
+          final otherAuthState = AuthState();
+          expect(authState, isNot(equals(otherAuthState)));
 
           expect(
-            playerState.copyWith(),
-            equals(otherPlayerState),
+            authState.copyWith(),
+            equals(otherAuthState),
           );
         },
       );
