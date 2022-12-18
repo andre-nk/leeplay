@@ -1,9 +1,12 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:json_theme/json_theme.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -20,7 +23,7 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+Future<void> bootstrap(FutureOr<Widget> Function(ThemeData) builder) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   FlutterError.onError = (details) {
@@ -33,9 +36,13 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory(),
   );
+
+  final themeStr = await rootBundle.loadString('assets/theme.json');
+  final themeJson = jsonDecode(themeStr);
+  final theme = ThemeDecoder.decodeThemeData(themeJson)!;
   
   await runZonedGuarded(
-    () async => runApp(await builder()),
+    () async => runApp(await builder(theme)),
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
 }

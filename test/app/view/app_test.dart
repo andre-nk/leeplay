@@ -5,7 +5,7 @@ import 'package:leeplay/app/app.dart';
 void main() {
   group('App', () {
     testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
+      await tester.pumpWidget(App(theme: ThemeData()));
       expect(find.byType(SizedBox), findsOneWidget);
     });
   });

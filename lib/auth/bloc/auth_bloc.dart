@@ -57,11 +57,18 @@ class AuthBloc extends HydratedBloc<AuthEvent, AuthState> {
 
   @override
   AuthState? fromJson(Map<String, dynamic> json) {
-    throw UnimplementedError();
+    return const AuthLoggedOut();
   }
 
   @override
   Map<String, dynamic>? toJson(AuthState state) {
-    throw UnimplementedError();
+    if (state is AuthLoggedIn) {
+      return {
+        'isLoggedIn': true,
+        'lineUser': state.lineUser.toString(),
+      };
+    } else {
+      return {'isLoggedIn': false};
+    }
   }
 }
