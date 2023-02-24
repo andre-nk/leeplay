@@ -23,7 +23,7 @@ dependencies:
   intl: ^0.17.0
   json_theme: ^4.0.3+2
   just_audio: ^0.9.30
-  path_provider: ^2.0.11
+  path_provider: ^2.0.13
   rxdart: ^0.27.7
   youtube_explode_dart: ^1.12.3
 
